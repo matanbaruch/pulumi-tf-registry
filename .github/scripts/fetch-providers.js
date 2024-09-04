@@ -2,6 +2,10 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Fetch all Terraform providers
 async function getAllProviders() {
     const baseUrl = 'https://registry.terraform.io';
@@ -45,7 +49,6 @@ async function runPulumiCommand(provider) {
 
         // Update the package name in the package.json
         const packageJsonPath = path.join('sdks', provider.attributes.name, 'package.json');
-        console.log(`Checking package.json at ${packageJsonPath}`);
         if (fs.existsSync(packageJsonPath)) {
             const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
             if (packageJson.name === `@pulumi/${provider.attributes.name}`) {
@@ -56,6 +59,7 @@ async function runPulumiCommand(provider) {
         } else {
             console.warn(`package.json not found for ${provider.attributes.name} at ${packageJsonPath}`);
         }
+        // Sleep for 5 seconds to avoid rate limiting
     } catch (error) {
         console.error(`Unable to convert ${provider.attributes.namespace}/${provider.attributes.name}: ${error.message}`);
     }
@@ -71,11 +75,14 @@ async function main() {
             console.log(`Provider Fetched: ${provider.attributes.namespace}/${provider.attributes.name}`);
         });
 
-        const promises = providers.map(provider => {
+        for (let i = 0; i < providers.length; i++) {
+            const provider = providers[i];
             console.log(`Running Pulumi command for ${provider.attributes.namespace}/${provider.attributes.name}`);
-            return runPulumiCommand(provider);
-        });
-        await Promise.all(promises);
+            await runPulumiCommand(provider);
+
+            // Sleep for 5 second between commands due to rate limiting
+            await sleep(5000);
+        }
 
         console.log('All Pulumi commands have been executed.');
     } catch (error) {
