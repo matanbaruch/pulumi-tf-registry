@@ -1,0 +1,39 @@
+name: Fetch Providers and Commit
+
+on:
+#  schedule:
+#    - cron: '0 0 * * *'  # Runs at 00:00 every day
+  workflow_dispatch:  # Allows manual triggering
+
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-providers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Specify the node version you want to use
+
+      - name: Run fetch-providers script
+        run: node .github/scripts/fetch-providers.js
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Automated update of providers"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

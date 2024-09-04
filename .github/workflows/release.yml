@@ -10,7 +10,7 @@ on:
 jobs:
   release:
     permissions:
-      contents: write
+      contents: read
       packages: write
 
     runs-on: ubuntu-latest
