@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "index.ts",
+        "provider.ts",
+        "recordA.ts",
+        "recordAaaa.ts",
+        "recordCaa.ts",
+        "recordCname.ts",
+        "recordMx.ts",
+        "recordNaptr.ts",
+        "recordNs.ts",
+        "recordPtr.ts",
+        "recordTlsa.ts",
+        "recordTxt.ts",
+        "utilities.ts"
+    ]
+}
