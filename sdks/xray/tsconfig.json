@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "binaryManagerBuilds.ts",
+        "binaryManagerReleaseBundlesV2.ts",
+        "binaryManagerRepos.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "customIssue.ts",
+        "getArtifactsScan.ts",
+        "ignoreRule.ts",
+        "index.ts",
+        "licensePolicy.ts",
+        "licensesReport.ts",
+        "operationalRiskPolicy.ts",
+        "operationalRisksReport.ts",
+        "provider.ts",
+        "repositoryConfig.ts",
+        "securityPolicy.ts",
+        "settings.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts",
+        "violationsReport.ts",
+        "vulnerabilitiesReport.ts",
+        "watch.ts",
+        "webhook.ts",
+        "workersCount.ts"
+    ]
+}

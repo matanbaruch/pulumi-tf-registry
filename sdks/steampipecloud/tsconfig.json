@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "connection.ts",
+        "getOrganization.ts",
+        "getProcess.ts",
+        "getUser.ts",
+        "index.ts",
+        "organization.ts",
+        "organizationMember.ts",
+        "organizationWorkspaceMember.ts",
+        "provider.ts",
+        "userPreferences.ts",
+        "utilities.ts",
+        "workspace.ts",
+        "workspaceAggregator.ts",
+        "workspaceConnection.ts",
+        "workspaceMod.ts",
+        "workspaceModVariable.ts",
+        "workspacePipeline.ts",
+        "workspaceSnapshot.ts"
+    ]
+}

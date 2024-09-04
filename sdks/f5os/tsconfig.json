@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "configBackup.ts",
+        "getTenantImage.ts",
+        "index.ts",
+        "interface.ts",
+        "lag.ts",
+        "partition.ts",
+        "partitionChangePassword.ts",
+        "provider.ts",
+        "tenant.ts",
+        "tenantImage.ts",
+        "utilities.ts",
+        "vlan.ts"
+    ]
+}

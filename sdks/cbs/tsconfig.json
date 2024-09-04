@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "arrayAws.ts",
+        "arrayAzure.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "getAzurePlans.ts",
+        "getPlanAzure.ts",
+        "index.ts",
+        "provider.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}

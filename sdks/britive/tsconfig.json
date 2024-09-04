@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "getApplication.ts",
+        "getIdentityProvider.ts",
+        "index.ts",
+        "permission.ts",
+        "policy.ts",
+        "profile.ts",
+        "profilePermission.ts",
+        "profilePolicy.ts",
+        "profileSessionAttribute.ts",
+        "provider.ts",
+        "role.ts",
+        "tag.ts",
+        "tagMember.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}

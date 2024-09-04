@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "drive.ts",
+        "getClusters.ts",
+        "getGroups.ts",
+        "getMediasources.ts",
+        "getNetworks.ts",
+        "getNodes.ts",
+        "getVersion.ts",
+        "getVms.ts",
+        "index.ts",
+        "member.ts",
+        "network.ts",
+        "nic.ts",
+        "provider.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "user.ts",
+        "utilities.ts",
+        "vm.ts"
+    ]
+}

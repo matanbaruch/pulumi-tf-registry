@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "action.ts",
+        "alarm.ts",
+        "bot.ts",
+        "circuitBreaker.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "file.ts",
+        "getVersion.ts",
+        "index.ts",
+        "integration.ts",
+        "metric.ts",
+        "notebook.ts",
+        "principal.ts",
+        "provider.ts",
+        "resource.ts",
+        "runbook.ts",
+        "systemSettings.ts",
+        "timeTrigger.ts",
+        "utilities.ts"
+    ]
+}

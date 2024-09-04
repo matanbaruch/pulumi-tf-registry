@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "getGroup.ts",
+        "getOrganization.ts",
+        "getTemplate.ts",
+        "getUser.ts",
+        "group.ts",
+        "index.ts",
+        "provider.ts",
+        "template.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "user.ts",
+        "utilities.ts",
+        "workspaceProxy.ts"
+    ]
+}

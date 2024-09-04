@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "alert.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "dashboard.ts",
+        "getAlert.ts",
+        "getDashboard.ts",
+        "getJavascriptFunction.ts",
+        "getMaterializedView.ts",
+        "getRemoteFunction.ts",
+        "getSink.ts",
+        "getSource.ts",
+        "getStream.ts",
+        "getView.ts",
+        "index.ts",
+        "javascriptFunction.ts",
+        "materializedView.ts",
+        "provider.ts",
+        "remoteFunction.ts",
+        "sink.ts",
+        "source.ts",
+        "stream.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts",
+        "view.ts"
+    ]
+}

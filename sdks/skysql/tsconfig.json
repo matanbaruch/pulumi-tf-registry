@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "allowList.ts",
+        "autonomous.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "getAvailabilityZones.ts",
+        "getCredentials.ts",
+        "getProjects.ts",
+        "getService.ts",
+        "getVersions.ts",
+        "index.ts",
+        "provider.ts",
+        "service.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}
