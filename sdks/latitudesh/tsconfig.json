@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "config/index.ts",
+        "config/vars.ts",
+        "getPlan.ts",
+        "getRegion.ts",
+        "getRole.ts",
+        "index.ts",
+        "member.ts",
+        "project.ts",
+        "provider.ts",
+        "server.ts",
+        "sshKey.ts",
+        "tag.ts",
+        "userData.ts",
+        "utilities.ts",
+        "virtualNetwork.ts",
+        "vlanAssignment.ts"
+    ]
+}

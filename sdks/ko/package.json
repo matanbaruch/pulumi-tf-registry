@@ -1,0 +1,23 @@
+{
+  "name": "@matanbaruch/chainguard-dev-ko",
+  "version": "0.0.16",
+  "description": "A Pulumi provider dynamically bridged from ko.",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "dependencies": {
+    "@pulumi/pulumi": "^3.129.0",
+    "async-mutex": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14",
+    "typescript": "^4.3.5"
+  },
+  "pulumi": {
+    "resource": true,
+    "name": "terraform-provider",
+    "version": "0.1.0"
+  }
+}

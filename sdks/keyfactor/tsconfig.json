@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "certificate.ts",
+        "certificateDeployment.ts",
+        "certificateStore.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "getAgent.ts",
+        "getCertificate.ts",
+        "getCertificateStore.ts",
+        "getCertificateTemplate.ts",
+        "getIdentity.ts",
+        "getRole.ts",
+        "identity.ts",
+        "index.ts",
+        "provider.ts",
+        "role.ts",
+        "templateRoleBinding.ts",
+        "utilities.ts"
+    ]
+}

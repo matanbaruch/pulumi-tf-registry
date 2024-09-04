@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "application.ts",
+        "applicationAgent.ts",
+        "applicationAgentCredential.ts",
+        "applicationSpace.ts",
+        "auditSink.ts",
+        "authorizationPolicy.ts",
+        "consent.ts",
+        "getApplication.ts",
+        "getApplicationAgent.ts",
+        "getApplicationAgents.ts",
+        "getApplicationSpace.ts",
+        "getApplicationSpaces.ts",
+        "getApplications.ts",
+        "getCustomer.ts",
+        "index.ts",
+        "ingestPipeline.ts",
+        "provider.ts",
+        "tokenIntrospect.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}

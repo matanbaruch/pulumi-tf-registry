@@ -1,0 +1,41 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "discoveryEngineConfiguration.ts",
+        "discoveryEngineDiscoveredPolicy.ts",
+        "discoveryEngineEnableDiscoveredPolicy.ts",
+        "getDiscoveryEngineConfiguration.ts",
+        "getDiscoveryEngineDiscoveredPolicy.ts",
+        "getKubearmorConfiguration.ts",
+        "getKubearmorHostSecurityPolicy.ts",
+        "getKubearmorInstalledVersion.ts",
+        "getKubearmorNamespacePosture.ts",
+        "getKubearmorNamespaceVisibility.ts",
+        "getKubearmorNode.ts",
+        "getKubearmorSecurityPolicy.ts",
+        "getKubearmorStableVersion.ts",
+        "index.ts",
+        "kubearmorConfiguration.ts",
+        "kubearmorHostSecurityPolicy.ts",
+        "kubearmorNamespacePosture.ts",
+        "kubearmorNamespaceVisibility.ts",
+        "kubearmorSecurityPolicy.ts",
+        "provider.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}

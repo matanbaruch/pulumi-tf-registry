@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "attest.ts",
+        "copy.ts",
+        "getVerify.ts",
+        "index.ts",
+        "provider.ts",
+        "sign.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts"
+    ]
+}

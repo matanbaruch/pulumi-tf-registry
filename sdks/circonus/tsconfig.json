@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "outDir": "bin",
+        "target": "es2016",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "declaration": true,
+        "sourceMap": true,
+        "stripInternal": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "files": [
+        "check.ts",
+        "config/index.ts",
+        "config/vars.ts",
+        "contactGroup.ts",
+        "dashboard.ts",
+        "getAccount.ts",
+        "getCollector.ts",
+        "graph.ts",
+        "index.ts",
+        "maintenance.ts",
+        "metric.ts",
+        "overlaySet.ts",
+        "provider.ts",
+        "ruleSet.ts",
+        "ruleSetGroup.ts",
+        "types/index.ts",
+        "types/input.ts",
+        "types/output.ts",
+        "utilities.ts",
+        "worksheet.ts"
+    ]
+}
