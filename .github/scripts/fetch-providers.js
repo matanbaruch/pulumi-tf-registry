@@ -4,15 +4,13 @@ const path = require('path');
 
 // Fetch all Terraform providers
 async function getAllProviders() {
-    const baseUrl = 'https://registry.terraform.io/v1/providers';
+    const baseUrl = 'https://registry.terraform.io';
     let allProviders = [];
-    let nextUrl = baseUrl;
-    let currentUrl = '';
+    let nextUrl = baseUrl + '/v2/providers?page[number]=1&page[size]=100';
 
-    while (nextUrl && nextUrl !== currentUrl) {
+    while (nextUrl) {
         try {
-            currentUrl = nextUrl;
-            const response = await fetch(currentUrl);
+            const response = await fetch(nextUrl);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -20,11 +18,14 @@ async function getAllProviders() {
 
             const data = await response.json();
 
-            allProviders = allProviders.concat(data.providers);
+            // Filter out providers with tier "community"
+            const filteredProviders = data.data.filter(provider => provider.attributes.tier !== 'community');
+            allProviders = allProviders.concat(filteredProviders);
 
-            nextUrl = data.meta.next_url && data.meta.next_url !== currentUrl ? data.meta.next_url : null;
+            // Get next URL from the response
+            nextUrl = data.links.next ? `${baseUrl}${data.links.next}` : null;
 
-            console.log(`Fetched ${data.providers.length} providers. Total: ${allProviders.length}`);
+            console.log(`Fetched ${filteredProviders.length} non-community providers. Total: ${allProviders.length}`);
 
             await new Promise(resolve => setTimeout(resolve, 1000));
         } catch (error) {
@@ -38,25 +39,25 @@ async function getAllProviders() {
 
 // Execute Pulumi command to generate SDKs
 async function runPulumiCommand(provider) {
-    const command = `pulumi package add terraform-provider ${provider.namespace}/${provider.name}`;
+    const command = `pulumi package add terraform-provider ${provider.attributes.namespace}/${provider.attributes.name}`;
     try {
         execSync(command);
 
         // Update the package name in the package.json
-        const packageJsonPath = path.join('sdks', provider.name, 'package.json');
+        const packageJsonPath = path.join('sdks', provider.attributes.name, 'package.json');
         console.log(`Checking package.json at ${packageJsonPath}`);
         if (fs.existsSync(packageJsonPath)) {
             const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
-            if (packageJson.name === `@pulumi/${provider.name}`) {
-                packageJson.name = `@matanbaruch/${provider.name}`;
+            if (packageJson.name === `@pulumi/${provider.attributes.name}`) {
+                packageJson.name = `@matanbaruch/${provider.attributes.namespace.toLowerCase()}-${provider.attributes.name}`;
                 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
                 console.log(`Updated package name in ${packageJsonPath}`);
             }
         } else {
-            console.warn(`package.json not found for ${provider.name} at ${packageJsonPath}`);
+            console.warn(`package.json not found for ${provider.attributes.name} at ${packageJsonPath}`);
         }
     } catch (error) {
-        console.error(`Unable to convert ${provider.namespace}/${provider.name}: ${error.message}`);
+        console.error(`Unable to convert ${provider.attributes.namespace}/${provider.attributes.name}: ${error.message}`);
     }
 }
 
@@ -64,11 +65,14 @@ async function runPulumiCommand(provider) {
 async function main() {
     try {
         const providers = await getAllProviders();
-        console.log(`Total providers fetched: ${providers.length}`);
+        console.log(`Total non-community providers fetched: ${providers.length}`);
 
-        // Run Pulumi commands in parallel
+        providers.forEach(provider => {
+            console.log(`Provider Fetched: ${provider.attributes.namespace}/${provider.attributes.name}`);
+        });
+
         const promises = providers.map(provider => {
-            console.log(`Running Pulumi command for ${provider.namespace}/${provider.name}`);
+            console.log(`Running Pulumi command for ${provider.attributes.namespace}/${provider.attributes.name}`);
             return runPulumiCommand(provider);
         });
         await Promise.all(promises);
