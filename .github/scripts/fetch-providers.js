@@ -43,7 +43,7 @@ async function getAllProviders() {
 
 // Execute Pulumi command to generate SDKs
 async function runPulumiCommand(provider) {
-    const command = `pulumi package add terraform-provider ${provider.attributes.namespace}/${provider.attributes.name}`;
+    const command = `pulumi package add terraform-provider registry.terraform.io/${provider.attributes.namespace}/${provider.attributes.name}`;
     try {
         execSync(command);
 
@@ -81,7 +81,7 @@ async function main() {
             await runPulumiCommand(provider);
 
             // Sleep for 5 second between commands due to rate limiting
-            await sleep(5000);
+            await sleep(1000);
         }
 
         console.log('All Pulumi commands have been executed.');
